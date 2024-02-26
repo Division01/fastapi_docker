@@ -1,30 +1,8 @@
-"""from fastapi import FastAPI, Form, Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-
-app = FastAPI()
-templates = Jinja2Templates(directory="templates")
-
-
-@app.post("/predict/")
-async def predict(description: str = Form(...)):
-    words = description.split()
-    if not words:
-        return {"error": "Description cannot be empty"}
-    return {"result": words[0]}
-
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-"""
-
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 import pickle
-import json
 
 
 # Enable session support
