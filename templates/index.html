@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Web Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .comment p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FastAPI Web Interface</h1>
+        <form action="/" method="post">
+            <input type="text" name="description" placeholder="Enter your description...">
+            <input type="submit" value="Submit">
+        </form>
+        <div class="comments">
+            <h2>Past Descriptions and Answers:</h2>
+            {% for item in past_descriptions %}
+            <div class="comment">
+                <p><strong>Description:</strong> {{ item.description }}</p>
+                <p><strong>Answer:</strong> {{ item.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
