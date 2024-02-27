@@ -12,11 +12,11 @@ app.add_middleware(SessionMiddleware, secret_key="some_secret_key")
 templates = Jinja2Templates(directory="templates")
 
 # Load the model
-with open("trained_rf_model.pkl", "rb") as file:
+with open("./models/baseline_rf_model/trained_rf_model.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Load the saved vectorizer model
-with open("tfidf_vectorizer.pkl", "rb") as f:
+with open("./models/baseline_rf_model/tfidf_vectorizer.pkl", "rb") as f:
     tfidf_vectorizer = pickle.load(f)
 
 
