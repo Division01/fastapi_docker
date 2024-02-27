@@ -1,6 +1,9 @@
 # Docker FastAPI Project
 
 This repository contains a Dockerized FastAPI application for predicting fraudulent activity based on input descriptions.
+As this is a job interview there has been no dicussions with the business to know the use case. 
+This means that the model might no be the best one for use case, as I have no idea what the use case will be.
+If this project is taken over by anyone, please adapt the model accordingly.
 
 ## Overview
 
