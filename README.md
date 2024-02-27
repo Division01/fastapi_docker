@@ -15,7 +15,7 @@ The project includes the following components:
 
 ## Prerequisites
 
-To run the FastAPI application locally, you need to have Docker installed on your system.
+To run the FastAPI application locally, you need to have Docker installed (and running) on your system.
 
 ## Usage
 
