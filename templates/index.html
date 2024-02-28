@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Web Interface</title>
+    <title>FastAPI Web Interface - Homepage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,63 +24,35 @@
             margin-bottom: 20px;
             color: #333;
         }
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
+        p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
         }
-        input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            outline: none;
-            font-size: 16px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .comments {
+        a {
+            display: block;
+            text-align: center;
             margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
         }
-        .comment {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        .comment p {
-            margin: 0;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>FastAPI Web Interface</h1>
-        <form action="/" method="post">
-            <input type="text" name="description" placeholder="Enter your description...">
-            <input type="submit" value="Submit">
-        </form>
-        <div class="comments">
-            <h2>Past Descriptions and Answers:</h2>
-            {% for item in past_descriptions %}
-            <div class="comment">
-                <p><strong>Description:</strong> {{ item.description }}</p>
-                <p><strong>Answer:</strong> {{ item.answer }}</p>
-            </div>
-            {% endfor %}
-        </div>
+        <h1>Welcome to the FastAPI Web Interface</h1>
+        <p>This web interface allows you to interact with machine learning models deployed using FastAPI.</p>
+        <p>You can access the following endpoints:</p>
+        <ul>
+            <li><a href="/user/baseline">Baseline Model Interface</a></li>
+            <li><a href="/user/lr">Logistic Regression Model Interface</a></li>
+            <li><a href="/user/rf">Random Forest Model Interface</a></li>
+            <li><a href="/user/svm">SVM Model Interface</a></li>
+        </ul>
     </div>
 </body>
 </html>
