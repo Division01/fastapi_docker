@@ -49,6 +49,17 @@ model_info["svm"] = {
     "classification_report": svm_pipeline["classification_report"],
 }
 
+# Load the SGD model
+with open("./models/sgd_pipeline.pkl", "rb") as file:
+    sgd_pipeline = pickle.load(file)
+models["sgd"] = sgd_pipeline["pipeline"]
+model_info["sgd"] = {
+    "parameters": sgd_pipeline["parameters"],
+    "f2_score": sgd_pipeline["f2_score"],
+    "confusion_matrix": sgd_pipeline["confusion_matrix"],
+    "classification_report": sgd_pipeline["classification_report"],
+}
+
 # Load the baseline model
 with open("./models/baseline_rf_model/trained_rf_model.pkl", "rb") as file:
     baseline_model = pickle.load(file)
